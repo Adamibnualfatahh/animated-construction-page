@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Site Under Construction</title>
+    <title>LEUIT | New Site Under Construction</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -82,6 +82,76 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* UPDATE: Ubah overflow agar bisa di-scroll jika konten panjang */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: var(--fill-color);
+            width: 100%;
+            min-height: 100vh; /* Ubah height ke min-height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            overflow-y: auto; /* PENTING: Ubah dari hidden ke auto */
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px 0; /* Tambah padding vertikal */
+        }
+
+        /* TAMBAHAN: Style untuk List Layanan agar rapi */
+        ul.services {
+            text-align: left;
+            display: inline-block; /* Agar list tetap di tengah tapi teks rata kiri */
+            margin: 20px 0;
+            padding: 0;
+            list-style: none; /* Hilangkan bullet point default */
+        }
+
+        ul.services li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        /* Menambah bullet custom */
+        ul.services li::before {
+            content: "•";
+            color: var(--dark-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* TAMBAHAN: Style untuk Link Email */
+        .contact-link {
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        /* UPDATE: Kecilkan sedikit gambar agar teks lebih naik */
+        svg#lettravel {
+            width: 100%;
+            height: auto;
+            max-height: 40vh; /* Dikurangi dari 55vh */
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -322,8 +392,34 @@
         </svg>
 
         <div class="text-content">
-            <h1>New Site Under Construction</h1>
-            <p>Our new website is on the way. Please check back soon.</p>
+            <h1>LEUIT — Business Consulting & Growth Partner</h1>
+            
+            <p style="font-weight: 600; margin-bottom: 15px;">
+                We support organizations to grow better and create meaningful impact.
+            </p>
+
+            <p>
+                Our website is currently under development.<br>
+                While we prepare a better digital experience, here’s what LEUIT specializes in:
+            </p>
+
+            <ul class="services">
+                <li>Customer Satisfaction & Experience Surveys</li>
+                <li>Market Perception & Community Insight Studies</li>
+                <li>Business Research & Evidence-Based Consulting</li>
+                <li>Data-Driven Recommendations for Strategic Decisions</li>
+                <li>Business Valuation</li>
+                <li>Business Model Development</li>
+            </ul>
+
+            <p>Please check back soon for updates.</p>
+            
+            <br>
+            
+            <p>
+                For inquiries or collaboration, contact us at:<br>
+                <a href="mailto:hallo@leuit.id" class="contact-link">📩 hallo@leuit.id</a>
+            </p>
         </div>
     </div>
 
